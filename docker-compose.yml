@@ -1,0 +1,20 @@
+version: '3.5'
+services:
+  codenation:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    container_name: codenation
+    command: >-
+      /bin/bash -c "jupyter notebook
+      --ip='*' --port=8888 --no-browser --notebook-dir=/root/codenation
+      --allow-root"
+    restart: unless-stopped
+    tty: true
+    ports:
+      - '8888:8888'
+    volumes: 
+     - codenation:/root/codenation
+ 
+volumes:
+  codenation:
