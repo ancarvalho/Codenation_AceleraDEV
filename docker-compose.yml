@@ -14,7 +14,7 @@ services:
     ports:
       - '8888:8888'
     volumes: 
-     - codenation:/root/codenation
+     - codenation:/root
  
 volumes:
   codenation:
